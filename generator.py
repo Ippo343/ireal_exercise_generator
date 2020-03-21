@@ -8,9 +8,21 @@ roots = "ABCDEFG"
 accidentals = ("", "b", "#")
 qualities = "7"
 
+# iRealPro agrees with Code.
+unsupported = {
+    ("E", "#"),
+    ("F", "b"),
+    ("B", "#"),
+}
+
 
 def main():
-    chords = ["".join(chord) for chord in product(roots, accidentals, qualities)]
+    chords = [
+        f"{r}{a}{q}"
+        for r, a, q in product(roots, accidentals, qualities)
+        if (r, a) not in unsupported
+    ]
+
     shuffle(chords)
     chord_progression = "T44{" + " |".join(chords) + "}"
 
