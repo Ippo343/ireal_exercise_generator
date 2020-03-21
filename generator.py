@@ -27,7 +27,7 @@ def main():
     chord_progression = "T44{" + " |".join(chords) + "}"
 
     song_data = {
-        'title': "Exercise",
+        'title': "Random dominant chords",
         'composer': 'Pilotino Gino',
         'style': 'Medium Swing',
         'key': 'C',
