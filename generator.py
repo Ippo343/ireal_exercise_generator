@@ -22,7 +22,7 @@ def main(args):
     chord_progression = "T44{" + " |".join(chords) + "}"
 
     song_data = {
-        'title': "aaa Random dominant chords",
+        'title': "aaa Random chords {}".format(tuple(args.qualities)),
         'composer': 'Pilotino Gino',
         'style': 'Medium Swing',
         'key': 'C',
