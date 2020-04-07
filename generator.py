@@ -1,18 +1,21 @@
 #!/usr/bin/env python3
 # -*- coding: utf8 -*-
 
+import argparse
+import sys
 from itertools import product
 from random import shuffle
 
 roots = "ABCDEFG"
 accidentals = ("", "b", "#")
-qualities = "7"
+default_qualities = ("7", "^7")
 
 
-def main():
+def main(args):
+
     chords = [
         f"{r}{a}{q}"
-        for r, a, q in product(roots, accidentals, qualities)
+        for r, a, q in product(roots, accidentals, args.qualities)
     ]
 
     shuffle(chords)
@@ -36,4 +39,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("qualities", nargs="*", default=default_qualities)
+    args = parser.parse_args(sys.argv[1:])
+    main(args)
