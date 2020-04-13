@@ -19,7 +19,7 @@ def main(args):
     ]
 
     shuffle(chords)
-    chord_progression = "T44{" + " |".join(chords) + "}"
+    chord_progression = "T44{" + " |".join(chords) + " }"
 
     song_data = {
         'title': "aaa Random chords {}".format(tuple(args.qualities)),
